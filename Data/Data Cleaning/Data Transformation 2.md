@@ -11,9 +11,7 @@
 - It’s useful for correcting **left-skewed distributions** by stretching values in the lower tail.
 
 #### **Mathematical Formula:**
-$$
-y = x^2
-$$
+$$y = x^2$$
 
 #### **When to Use:**
 
@@ -35,7 +33,7 @@ df['transformed_column'] = df['column'].apply(lambda x: x**2)
 
 #### **Mathematical Formula:**
 
-y=log⁡(x)y = \log(x)y=log(x)
+$$y=log⁡(x)y = \log(x)y=log(x)$$
 
 #### **When to Use:**
 
@@ -59,12 +57,10 @@ df['transformed_column'] = df['column'].apply(lambda x: np.log(x))
 
 #### **Mathematical Formula:**
 
-$$
-y(\lambda) = \begin{cases} 
+$$y(\lambda) = \begin{cases} 
 \frac{(x^\lambda - 1)}{\lambda}, & \lambda \neq 0 \\ 
 \log(x), & \lambda = 0 
-\end{cases}
-$$
+\end{cases}$$
 
 
 #### **When to Use:**
@@ -90,14 +86,12 @@ df['transformed_column'], lambda_value = boxcox(df['column']) print(f"Optimal la
 
 #### **Mathematical Formula:**
 
-$$
-y(\lambda) = \begin{cases} 
+$$y(\lambda) = \begin{cases} 
 \frac{((x+1)^\lambda - 1)}{\lambda}, & \lambda \neq 0, x \geq 0 \\ 
 \log(x + 1), & \lambda = 0, x \geq 0 \\ 
 \frac{-((-x+1)^{2-\lambda} - 1)}{2-\lambda}, & \lambda \neq 2, x < 0 \\ 
 -\log(-x+1), & \lambda = 2, x < 0 
-\end{cases}
-$$
+\end{cases}$$
 ​
 
 #### **When to Use:**

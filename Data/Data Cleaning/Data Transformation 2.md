@@ -86,12 +86,17 @@ df['transformed_column'], lambda_value = boxcox(df['column']) print(f"Optimal la
 
 #### **Mathematical Formula:**
 
-$$y(\lambda) = \begin{cases} 
-\frac{((x+1)^\lambda - 1)}{\lambda}, & \lambda \neq 0, x \geq 0 \\ 
-\log(x + 1), & \lambda = 0, x \geq 0 \\ 
-\frac{-((-x+1)^{2-\lambda} - 1)}{2-\lambda}, & \lambda \neq 2, x < 0 \\ 
--\log(-x+1), & \lambda = 2, x < 0 
-\end{cases}$$
+
+$$
+y(\lambda) = 
+\begin{cases} 
+\frac{(x+1)^\lambda - 1}{\lambda}, & \text{if } \lambda \neq 0 \text{ and } x \geq 0, \\ 
+\log(x + 1), & \text{if } \lambda = 0 \text{ and } x \geq 0, \\ 
+\frac{-((-x+1)^{2-\lambda} - 1)}{2-\lambda}, & \text{if } \lambda \neq 2 \text{ and } x < 0, \\ 
+-\log(-x+1), & \text{if } \lambda = 2 \text{ and } x < 0.
+\end{cases}
+$$
+
 ​
 
 #### **When to Use:**
@@ -100,11 +105,6 @@ $$y(\lambda) = \begin{cases}
 
 #### **Python Code:**
 
-python
-
-Copier le code
-
-`
 ```python
 from sklearn.preprocessing import PowerTransformer
 # Apply Yeo-Johnson transformation 

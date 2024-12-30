@@ -1,7 +1,6 @@
 
  As we know that **Normal Distribution** is a very important distribution in **Statistics**, which is key to many statisticians for solving problems in statistics. Usually, the data distribution in Nature follows a Normal distribution (**examples like – age, income, height, weight, etc.,** ). But the features in the real-life data are not normally distributed, however it is the best approximation when we are not aware of the underlying distribution pattern.
-
-
+ 
 ## Function Transformations
 
 ### SQUARE TRANSFORMATION
